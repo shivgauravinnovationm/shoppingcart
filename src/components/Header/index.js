@@ -6,9 +6,9 @@ function Header() {
         <div class="header d-flex">
             <div className="blueBox"></div>
             <div class="header-right">
-                <a href="#home">Home</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a href="#Men">Men</a>
+                <a href="#Women">Women</a>
+                <a href="#Kids">Kids</a>
             </div>
         </div>
     )

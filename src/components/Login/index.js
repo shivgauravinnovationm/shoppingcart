@@ -6,11 +6,11 @@ function Login() {
     return (
         <div className="login-container m-auto">
             <div className=" justify-content-sm-center text-center">
-                <h1 className="align-center">Login</h1>
+                <h1 className="align-center login-heading">Login</h1>
             </div>
             <form className="px-3 pb-2 ">
                 <div class="mb-1">
-                    <label for="exampleInputEmail1" class="login-label pb-2">Email address</label>
+                    <label for="exampleInputEmail1" class="login-label pb-2">Email </label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                 </div>
                 <div class="mb-3">

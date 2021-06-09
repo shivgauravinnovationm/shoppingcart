@@ -11,12 +11,13 @@
 a.signup {
     text-decoration: none;
 }   
-h1{
+.login-heading{
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
     line-height: 34px;
+    color: #000000;
 }
 .Login-btn{
     background: #024677;

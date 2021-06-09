@@ -1,6 +1,6 @@
 .blueBox{
-    width: 221px;
-    height: 69px;
+    width: 200px;
+    height: 59px;
     background-color: #024677;
     display: inline-block;
 }
@@ -8,11 +8,10 @@
 .header {
     overflow: hidden;
     background-color: #FFFFFF;
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 
   .header a {
-
     float: left;
     text-align: center;
     color: #024677;

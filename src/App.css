@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+body{
+  font-family: Montserrat !important;
+  font-style: normal !important;
+  font-size: 18px !important;
+  font-weight: bold;
 }
 
 .App-logo {

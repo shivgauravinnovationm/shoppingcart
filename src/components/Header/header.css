@@ -1,0 +1,42 @@
+.blueBox{
+    width: 221px;
+    height: 69px;
+    background-color: #024677;
+    display: inline-block;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #FFFFFF;
+    padding: 20px 10px;
+  }
+
+  .header a {
+
+    float: left;
+    text-align: center;
+    color: #024677;
+    padding: 12px;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    /* background-color: #ddd; */
+  }
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      display: block;
+      text-align: left;
+    }
+}

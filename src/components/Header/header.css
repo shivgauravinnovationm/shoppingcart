@@ -34,8 +34,7 @@
   }
   
   @media screen and (max-width: 500px) {
-    .header a {
-      display: block;
-      text-align: left;
+    .header {
+      width: 500px;
     }
 }

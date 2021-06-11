@@ -3,7 +3,7 @@ import "./sidebar.css";
 
 function Sidebar() {
     return (
-        <div>
+        <div className="wrapper">
             <div className="sidebar">
                 <a className="active" href="#home">Categories</a>
                 <div className="sidebar-container">

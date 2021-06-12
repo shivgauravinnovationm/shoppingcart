@@ -32,7 +32,15 @@ export const userAuthentication = (data) => {
             url: `${apiUrls.baseUrl}/${apiUrls.path.authentication}`,
             data,
         }).then((response) => {
-            console.log("response", response);
+            console.log(response);
+            if (response && response?.status === 200) {
+                localStorage.setItem('token', JSON.stringify(response.data.token));
+                dispatch(authActions.loginAPISuccess());
+            } else {
+                let errMsg = response.data.responseData.message;
+                console.log("errMsg", errMsg);
+                dispatch(authActions.loginAPIFailure(errMsg));
+            }
         }).catch((error) => {
             const errorMsg = error.message;
             dispatch(authActions.loginAPIFailure());

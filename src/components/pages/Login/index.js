@@ -2,10 +2,13 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { userAuthentication } from "../../../store/auth/auth"
+import Loading from "../../Loading/Loading"
 import "./login.css"
 
 function Login() {
     const dispatch = useDispatch();
+    const isLoading = useSelector(state => state.authReducer.isLoading)
+
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -18,7 +21,9 @@ function Login() {
     }
 
     return (
+
         <div className="login-container m-auto">
+            {isLoading && <Loading text={"Loading..."} />}
             <div className=" justify-content-sm-center text-center">
                 <h1 className="align-center login-heading">Login</h1>
             </div>

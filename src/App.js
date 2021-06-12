@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 import logo from './logo.svg';
 import { Router } from "react-router";
 import history from "./history"
@@ -7,8 +10,6 @@ import Sidebar from './components/Sidebar';
 import Home from "./components/pages/Home"
 import Login from "./components/pages/Login"
 import Routes from './Routes';
-import React from 'react'
-
 function App() {
 
   return (

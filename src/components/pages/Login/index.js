@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { ToastError } from "../../../Toast";
+
 import { userAuthentication } from "../../../store/auth/auth"
 import Loading from "../../Loading/Loading"
 import "./login.css"
@@ -9,7 +11,7 @@ import "./login.css"
 function Login() {
     const dispatch = useDispatch();
     const isLoading = useSelector(state => state.authReducer.isLoading)
-
+    const isError = useSelector(state => state.authReducer.isError)
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -26,8 +28,13 @@ function Login() {
 
         <div className="login-container m-auto">
             {isLoading && <Loading text={"Loading..."} />}
+
             <div className=" justify-content-sm-center text-center">
                 <h1 className="align-center login-heading">Login</h1>
+                {isError && <div class="alert alert-danger" role="alert">
+                    {isError}
+                </div>}
+
             </div>
             <form className="px-3 pb-2 " onSubmit={handleLoginSubmit}>
                 <div class="mb-1">

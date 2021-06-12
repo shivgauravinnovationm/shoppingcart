@@ -1,0 +1,30 @@
+.collection-preview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 10px 20px 10px 20px;
+    min-height: 120vh;
+}
+.preview{
+    flex-wrap: wrap;
+
+}
+.collection-preview .preview {
+    display: flex;
+    justify-content: space-between;
+}
+.abc{
+    overflow: scroll;
+    height: 100vh;
+}
+
+.abc::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-container{
+        display: flex;
+
+    }
+}

@@ -31,19 +31,19 @@ function Login() {
 
             <div className=" justify-content-sm-center text-center">
                 <h1 className="align-center login-heading">Login</h1>
-                {isError && <div class="alert alert-danger" role="alert">
+                {isError && <div className="alert alert-danger" role="alert">
                     {isError}
                 </div>}
 
             </div>
             <form className="px-3 pb-2 " onSubmit={handleLoginSubmit}>
-                <div class="mb-1">
-                    <label class="login-label pb-2">Email </label>
-                    <input type="text" class="form-control" value={username} onChange={e => setUsername(e.target.value)} />
+                <div className="mb-1">
+                    <label className="login-label pb-2">Email </label>
+                    <input type="text" className="form-control" value={username} onChange={e => setUsername(e.target.value)} />
                 </div>
-                <div class="mb-3">
-                    <label class="login-label pb-2">Password</label>
-                    <input type="password" class="form-control" value={password} onChange={e => setPassword(e.target.value)} />
+                <div className="mb-3">
+                    <label className="login-label pb-2">Password</label>
+                    <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
                 <div className="justify-content-sm-center  text-center" >
                     <button type="submit" className="Login-btn">Login</button>

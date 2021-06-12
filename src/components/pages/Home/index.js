@@ -1,8 +1,7 @@
 import React from 'react'
 import Sidebar from '../../Sidebar'
 import './home.css'
-import CollectionItem from '../../CollectionItem'
-
+import Catelogue from '../../Catelogue'
 function Home() {
     return (
         <div >
@@ -20,30 +19,7 @@ function Home() {
                     <div >
                         {/* className="abc" */}
                         <div className="preview">
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
-                            <CollectionItem />
+                            <Catelogue />
                         </div>
                     </div>
                     <div>

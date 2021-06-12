@@ -3,9 +3,9 @@ import "./header.css"
 
 function Header() {
     return (
-        <div class="header fixed-header d-flex">
+        <div className="header fixed-header d-flex">
             <div className="blueBox"></div>
-            <div class="header-left">
+            <div className="header-left">
                 <a href="#Men">Men</a>
                 <a href="#Women">Women</a>
                 <a href="#Kids">Kids</a>

@@ -6,8 +6,8 @@ import CollectionItem from '../../CollectionItem'
 function Home() {
     return (
         <div >
-            <div >
-                <div className="d-flex justify-content-between p-2 ">
+            <div className="position-relative ">
+                <div className="nav-container p-2 ">
                     <div>
                         <h5><a className="catelogue-link" href="#home">Home / <span>Catelogue</span></a></h5>
                     </div>
@@ -15,8 +15,6 @@ function Home() {
                         <input type="text" name="search" id="search" placeholder="Search" />
                     </div>
                 </div>
-            </div>
-            <div className="position-relative ">
                 <Sidebar />
                 <div className="collection-preview" style={{ marginLeft: "230px" }}>
                     <div >

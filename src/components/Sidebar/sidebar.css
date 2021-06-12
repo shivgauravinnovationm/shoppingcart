@@ -8,6 +8,9 @@
     overflow: auto;
     margin: 10px 10px ;
 }
+.wrapper {
+    position: absolute;
+}
 
 .sidebar a{
     display: block;

@@ -1,14 +1,20 @@
 
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { userAuthentication } from "../../../store/auth/auth"
 import "./login.css"
 
 function Login() {
-    const [email, setEmail] = useState("");
+    const dispatch = useDispatch();
+
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password)
+        console.log(username, password)
+        dispatch(userAuthentication({ username, password }));
+
     }
 
     return (
@@ -18,11 +24,11 @@ function Login() {
             </div>
             <form className="px-3 pb-2 " onSubmit={handleLoginSubmit}>
                 <div class="mb-1">
-                    <label for="exampleInputEmail1" class="login-label pb-2">Email </label>
-                    <input type="text" class="form-control" value={email} onChange={e => setEmail(e.target.value)} />
+                    <label class="login-label pb-2">Email </label>
+                    <input type="text" class="form-control" value={username} onChange={e => setUsername(e.target.value)} />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="login-label pb-2">Password</label>
+                    <label class="login-label pb-2">Password</label>
                     <input type="password" class="form-control" value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
                 <div className="justify-content-sm-center  text-center" >

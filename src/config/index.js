@@ -4,7 +4,6 @@ export const apiUrls = {
     baseUrl: DEV_VARS.apiUrl,
     path: {
         authentication: `auth/login`,
-
     }
 }
 

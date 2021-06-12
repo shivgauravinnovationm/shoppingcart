@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllJewellery } from "../../store/products/getJewellery"
 import { getAllElectronics } from "../../store/products/getElectronics"
 import "./sidebar.css";
+import Loading from '../Loading/Loading';
 
 function Sidebar() {
     const dispatch = useDispatch();
+    const isLoading = useSelector(state => state.getAllJewelleryReducer.isLoading);
+
     const [jewellery, setJewellery] = useState(false)
     const [electronics, setElectronics] = useState(false)
     const [clothes, setClothes] = useState(false);
@@ -34,6 +37,7 @@ function Sidebar() {
 
     return (
         <div className="wrapper">
+            {isLoading && <Loading text={"Loading..."} />}
             <div className="sidebar">
                 <a className="active" href="#home">Categories</a>
                 <div className="sidebar-container">

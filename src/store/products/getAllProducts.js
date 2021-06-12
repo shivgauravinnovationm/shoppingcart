@@ -26,6 +26,7 @@ const allProductsSlice = createSlice({
 export const getAllProducts = () => {
     return async (dispatch) => {
         try {
+            dispatch(allProductsAction.getAllProductsRequested());
             const resp = await axios.get(`${apiUrls.baseUrl}/${apiUrls.path.allProducts}`);
             if (resp && resp?.status === 200 && resp?.data?.status == "Error") {
                 let errMsg = resp?.data?.msg

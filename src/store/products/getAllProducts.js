@@ -41,29 +41,7 @@ export const getAllProducts = () => {
     }
 }
 
-// export const getAllProducts = () => {
 
-//     return (dispatch) => {
-//         dispatch(allProductsAction.getAllProductsRequested());
-//         axios({
-//             method: 'GET',
-//             url: `${apiUrls.baseUrl}/${apiUrls.path.allProducts}`,
-//         }).then((response) => {
-//             console.log(response);
-
-//             if (response && response?.status === 200 && response?.data?.status == "Error") {
-//                 let errMsg = response?.data?.msg
-//                 dispatch(allProductsAction.getAllProductsFailure(errMsg));
-//             } else {
-//                 dispatch(allProductsAction.getAllProductsSuccess(response?.data));
-//             }
-//         }).catch((error) => {
-//             const errorMsg = error.message;
-//             dispatch(allProductsAction.getAllProductsFailure(errMsg));
-
-//         });
-//     }
-// };
 
 export const allProductsAction = allProductsSlice.actions;
 

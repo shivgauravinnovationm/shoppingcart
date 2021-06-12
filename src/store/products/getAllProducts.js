@@ -36,7 +36,7 @@ export const getAllProducts = () => {
             }
         } catch (error) {
             const errorMsg = error.message;
-            dispatch(allProductsAction.getAllProductsSuccess(errorMsg));
+            dispatch(allProductsAction.getAllProductsFailure(errorMsg));
 
         }
     }

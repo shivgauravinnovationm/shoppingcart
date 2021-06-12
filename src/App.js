@@ -15,8 +15,6 @@ function App() {
     <div>
       <Header />
       <Router history={history}>
-        {/* <Home /> */}
-        {/* <Login /> */}
         <Routes />
       </Router>
     </div>

@@ -5,6 +5,7 @@ import { userAuthentication } from "../../../store/auth/auth"
 import Loading from "../../Loading/Loading"
 import "./login.css"
 
+
 function Login() {
     const dispatch = useDispatch();
     const isLoading = useSelector(state => state.authReducer.isLoading)
@@ -16,6 +17,7 @@ function Login() {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
         console.log(username, password)
+
         dispatch(userAuthentication({ username, password }));
 
     }

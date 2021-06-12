@@ -24,6 +24,7 @@ const authSlice = createSlice({
 });
 
 export const userAuthentication = (data) => {
+
     console.log("data", data);
     return (dispatch) => {
         dispatch(authActions.loginAPIRequested());
@@ -35,10 +36,8 @@ export const userAuthentication = (data) => {
             console.log(response);
             if (response && response?.status === 200) {
                 localStorage.setItem('token', JSON.stringify(response.data.token));
-                history.push({
-                    pathname: "/home",
-                });
                 dispatch(authActions.loginAPISuccess());
+                history.push("/home")
             } else {
                 let errMsg = response.data.responseData.message;
                 console.log("errMsg", errMsg);

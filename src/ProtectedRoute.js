@@ -5,7 +5,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
     return (
         <Route {...rest} render={
             props => {
-                if (user) {
+                if (JSON.parse(localStorage.getItem("token"))) {
                     return <Component {...rest} {...props} />
                 } else {
                     return <Redirect to={

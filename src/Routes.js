@@ -8,18 +8,15 @@ import {
 import ProtectedRoute from './ProtectedRoute';
 import Home from "./components/pages/Home"
 import Login from "./components/pages/Login"
-import { useSelector, useDispatch } from 'react-redux';
-import { getToken } from './config';
 
 function Routes() {
-    const isLoading = useSelector(state => state.authReducer.isLoading)
+
 
     return (
         <div>
             <Switch>
-                <ProtectedRoute exact path="/home" component={Home} user={getToken()} />
                 <Route exact path="/" component={Login} />
-
+                <ProtectedRoute exact path="/home" component={Home} />
             </Switch>
 
         </div>

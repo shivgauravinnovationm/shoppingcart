@@ -8,6 +8,6 @@ export const apiUrls = {
 }
 
 export const getToken = () => {
-    return JSON.parse(localStorage.getItem('authData')).token;
+    return JSON.parse(localStorage.getItem('token'));
     // return localStorage.getItem('token');
 }

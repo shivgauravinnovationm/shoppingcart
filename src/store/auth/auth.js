@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { apiUrls } from "../../config";
-
+import history from '../../history';
 const initialAuthState = { isAuthenticated: false, isLoading: false, isError: "" };
 const authSlice = createSlice({
     name: 'authentication',
@@ -35,6 +35,9 @@ export const userAuthentication = (data) => {
             console.log(response);
             if (response && response?.status === 200) {
                 localStorage.setItem('token', JSON.stringify(response.data.token));
+                history.push({
+                    pathname: "/home",
+                });
                 dispatch(authActions.loginAPISuccess());
             } else {
                 let errMsg = response.data.responseData.message;

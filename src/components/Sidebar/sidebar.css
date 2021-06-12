@@ -5,6 +5,7 @@
     background-color:rgba(223, 223, 223, 0.3);
     position: fixed;
     height: 80%;
+    min-height: 120vh;
     overflow: auto;
     margin: 10px 10px ;
 }

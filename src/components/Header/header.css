@@ -4,7 +4,11 @@
     background-color: #024677;
     display: inline-block;
 }
-
+  .fixed-header{
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+  }
 .header {
     overflow: hidden;
     background-color: #FFFFFF;

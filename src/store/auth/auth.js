@@ -34,14 +34,14 @@ export const userAuthentication = (data) => {
             data,
         }).then((response) => {
             console.log(response);
-            if (response && response?.status === 200) {
+
+            if (response && response?.status === 200 && response?.data?.status == "Error") {
+                let errMsg = response?.data?.msg
+                dispatch(authActions.loginAPIFailure(errMsg));
+            } else {
                 localStorage.setItem('token', JSON.stringify(response.data.token));
                 dispatch(authActions.loginAPISuccess());
                 history.push("/home")
-            } else {
-                let errMsg = response.data.responseData.message;
-                console.log("errMsg", errMsg);
-                dispatch(authActions.loginAPIFailure(errMsg));
             }
         }).catch((error) => {
             const errorMsg = error.message;

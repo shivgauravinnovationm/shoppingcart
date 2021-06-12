@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllJewellery } from "../../store/products/getJewellery"
+import { getAllElectronics } from "../../store/products/getElectronics"
 import "./sidebar.css";
 
 function Sidebar() {
@@ -19,14 +20,14 @@ function Sidebar() {
         if (jewellery) {
             dispatch(getAllJewellery())
         } else if (electronics) {
-            // 
+            dispatch(getAllElectronics())
         } else if (clothes) {
             // 
         } else if (sports) {
             // 
         }
 
-    }, [jewellery])
+    }, [jewellery, electronics])
 
 
 

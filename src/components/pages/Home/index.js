@@ -18,7 +18,8 @@ function Home() {
     const [products, setProducts] = useState([])
     const [page, setPage] = useState(1)
     const [totalPage, setTotalpage] = useState(0);
-    const [itemNo, setItemNo] = useState(0)
+    const [itemNo, setItemNo] = useState(0);
+    const [searchItem, setSearchItem] = useState([])
 
 
     useEffect(() => {
@@ -33,10 +34,27 @@ function Home() {
 
     }, [products, page, totalPage, allProducts])
 
-
+    console.log("products", products);
     const handleClick = (num) => {
         setItemNo(num)
         setPage(num)
+    }
+
+    const handleSearch = (e) => {
+        const { name, value } = e.target;
+        setSearch(value)
+        searchFilterFunc(value)
+    }
+
+    const searchFilterFunc = (value) => {
+        console.log("search", search);
+        console.log("search", typeof search);
+        const travser = products.map(item => item.category)
+        const result = products.filter(item => item.category.includes(value) || item.description.includes(value) || item.title.includes(value)
+        )
+        setSearchItem(result)
+        console.log("searchItem", result);
+        // console.log("travser", travser);
     }
 
 
@@ -50,7 +68,7 @@ function Home() {
                         <h5><a className="catelogue-link" href="#home">Home / <span>Catelogue</span></a></h5>
                     </div>
                     <div className="px-2">
-                        <input type="text" name="search" id="search" placeholder="Search" />
+                        <input type="text" name="search" id="search" placeholder="Search" value={search} onChange={handleSearch} />
                     </div>
                 </div>
                 <Sidebar />
@@ -58,7 +76,8 @@ function Home() {
                     <div className="mt-md-5" >
 
                         <div className="preview">
-                            <Catelogue allProducts={products} page={page} />
+
+                            <Catelogue allProducts={searchItem.length > 0 ? searchItem : products} page={page} />
                         </div>
                     </div>
                     <div>

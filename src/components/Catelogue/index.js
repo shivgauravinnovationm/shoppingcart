@@ -9,9 +9,9 @@ function Catelogue({ allProducts, page }) {
 
     const startIndex = (page - 1) * ITEM_PER_PAGE;
     const selectedProducts = allProducts?.slice(startIndex, startIndex + ITEM_PER_PAGE);
-    console.log("startIndex=>", startIndex);
-    console.log("allProducts=>", allProducts);
-    console.log("selectedProducts=>", selectedProducts);
+    // console.log("startIndex=>", startIndex);
+    // console.log("allProducts=>", allProducts);
+    // console.log("selectedProducts=>", selectedProducts);
 
     return (
 

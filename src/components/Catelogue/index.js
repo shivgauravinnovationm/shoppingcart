@@ -3,24 +3,15 @@ import CollectionItem from '../CollectionItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from "../../store/products/getAllProducts";
 import Loading from '../Loading/Loading';
-import Pagination from '../pagination';
+import { ITEM_PER_PAGE } from "../../util/Constant"
 
-function Catelogue() {
-    const dispatch = useDispatch();
-    const [products, setProducts] = useState([])
-    const isLoading = useSelector(state => state.getAllProductsReducer.isLoading);
-    const allProducts = useSelector(state => state.getAllProductsReducer.allProducts);
+function Catelogue({ allProducts, page }) {
 
-
-
-    useEffect(() => {
-        dispatch(getAllProducts())
-        if (allProducts) {
-            setProducts(allProducts)
-        }
-    }, [])
-    console.log("products", products);
-
+    const startIndex = (page - 1) * ITEM_PER_PAGE;
+    const selectedProducts = allProducts?.slice(startIndex, startIndex + ITEM_PER_PAGE);
+    console.log("startIndex=>", startIndex);
+    console.log("allProducts=>", allProducts);
+    console.log("selectedProducts=>", selectedProducts);
 
     return (
 
@@ -29,13 +20,13 @@ function Catelogue() {
 
                 <div className="preview">
                     <>
-                        {isLoading && <Loading text={"Loading..."} />}
+
                         {
-                            allProducts && allProducts?.length > 0 && allProducts?.map(item => <CollectionItem key={item.id} item={item} />)
+                            selectedProducts && selectedProducts?.length > 0 && selectedProducts?.map(item => <CollectionItem key={item.id} item={item} />)
                         }
                     </>
                 </div>
-                <Pagination />
+
             </div>
         </div>
 

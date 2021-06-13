@@ -31,6 +31,7 @@ export const getAllProducts = () => {
             if (resp && resp?.status === 200 && resp?.data?.status == "Error") {
                 let errMsg = resp?.data?.msg
                 dispatch(allProductsAction.getAllProductsFailure(errMsg));
+
             } else {
                 dispatch(allProductsAction.getAllProductsSuccess(resp?.data));
             }

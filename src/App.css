@@ -5,6 +5,8 @@ body{
   font-weight: bold;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -38,4 +40,11 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 500px) {
+  :root{
+    position: absolute;
+  }
+
 }

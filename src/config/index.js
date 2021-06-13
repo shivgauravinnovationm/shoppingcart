@@ -5,7 +5,7 @@ export const apiUrls = {
     path: {
         authentication: `auth/login`,
         allProducts: `products`,
-        jewellery: `jewelery`,
+        jewellery: `products/category/jewelery`,
         electronics: `electronic`,
     }
 }

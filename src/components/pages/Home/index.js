@@ -39,6 +39,8 @@ function Home() {
         }
 
         if (jewelleryChecked && jewelleryProducts == null) {
+            setPage(1)
+            handleClick(1)
             dispatch(getAllJewellery())
         } else if (jewelleryChecked && jewelleryProducts !== null) {
             setProducts(jewelleryProducts)
@@ -63,6 +65,7 @@ function Home() {
         console.log("search", search.length);
         const result = products.filter(item => item.category.includes(value) || item.description.includes(value) || item.title.includes(value)
         )
+        handleClick(1)
         setSearchItem(result)
         console.log("searchItem result", searchItem.length);
         // console.log("travser", travser);

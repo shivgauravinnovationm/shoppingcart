@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import "./collection-item.css"
 function CollectionItem({ item }) {
     const { category, description, id, image, price, title } = item
-    console.log("item", item);
-    console.log("image", image);
+
     useEffect(() => {
     }, [])
 

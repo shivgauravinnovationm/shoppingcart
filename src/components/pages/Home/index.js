@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../../Sidebar'
 import './home.css'
 import Catelogue from '../../Catelogue'
 function Home() {
+    const [search, setSearch] = useState("");
+
     return (
         <div >
             <div className="position-relative ">

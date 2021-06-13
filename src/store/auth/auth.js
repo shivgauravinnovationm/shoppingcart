@@ -33,7 +33,7 @@ export const userAuthentication = (data) => {
             url: `${apiUrls.baseUrl}/${apiUrls.path.authentication}`,
             data,
         }).then((response) => {
-            console.log(response);
+
 
             if (response && response?.status === 200 && response?.data?.status == "Error") {
                 let errMsg = response?.data?.msg

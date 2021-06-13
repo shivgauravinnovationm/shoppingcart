@@ -14,10 +14,10 @@ function Sidebar() {
     const [clothes, setClothes] = useState(false);
     const [sports, setSports] = useState(false)
 
-    console.log("jewellery", jewellery);
-    console.log("electronics", electronics);
-    console.log("clothes", clothes);
-    console.log("sports", sports);
+    // console.log("jewellery", jewellery);
+    // console.log("electronics", electronics);
+    // console.log("clothes", clothes);
+    // console.log("sports", sports);
 
     useEffect(() => {
         if (jewellery) {

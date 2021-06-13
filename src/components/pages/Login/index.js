@@ -18,7 +18,6 @@ function Login() {
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password)
 
         dispatch(userAuthentication({ username, password }));
 

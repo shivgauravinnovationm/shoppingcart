@@ -8,6 +8,9 @@
     color: #024677;
     text-decoration: none;
 }
+input#search{
+    margin-right: 25px;
+}
 .nav-container{
     display: flex;
     justify-content: space-between;

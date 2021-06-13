@@ -68,7 +68,7 @@ function Home() {
                         <h5><a className="catelogue-link" href="#home">Home / <span>Catelogue</span></a></h5>
                     </div>
                     <div className="px-2">
-                        <input type="text" name="search" id="search" placeholder="Search" value={search} onChange={handleSearch} />
+                        <input type="text" className="mr-2" name="search" id="search" placeholder="Search" value={search} onChange={handleSearch} />
                     </div>
                 </div>
                 <Sidebar />

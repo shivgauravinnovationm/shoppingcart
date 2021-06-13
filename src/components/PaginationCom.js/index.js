@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./pagination.css"
 function PaginationComp({ totalPage, handleClick, itemNo }) {
 
-    console.log("totalPage", totalPage);
     const pages = [...Array(totalPage).keys()].map(num => num + 1);
-    console.log("itemNo", itemNo);
     const classes = (num) => {
         if (num == itemNo) {
             return 'button-pagination-clicked'

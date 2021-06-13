@@ -1,1 +1,1 @@
-export const ITEM_PER_PAGE = 4;
+export const ITEM_PER_PAGE = 8;

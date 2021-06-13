@@ -45,7 +45,7 @@ function Home() {
         <div >
             {isLoading && <Loading text={"Loading..."} />}
             <div className="position-relative ">
-                <div className="nav-container p-2 ">
+                <div className="nav-container p-2 mb-2 ">
                     <div>
                         <h5><a className="catelogue-link" href="#home">Home / <span>Catelogue</span></a></h5>
                     </div>
@@ -55,7 +55,7 @@ function Home() {
                 </div>
                 <Sidebar />
                 <div className="collection-preview" style={{ marginLeft: "230px" }}>
-                    <div >
+                    <div className="mt-md-5" >
 
                         <div className="preview">
                             <Catelogue allProducts={products} page={page} />

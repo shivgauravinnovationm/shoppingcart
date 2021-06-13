@@ -36,7 +36,7 @@ function Sidebar() {
 
 
     return (
-        <div className="wrapper">
+        <div className="wrapper mt-md-5">
             {isLoading && <Loading text={"Loading..."} />}
             <div className="sidebar">
                 <a className="active" href="#home">Categories</a>

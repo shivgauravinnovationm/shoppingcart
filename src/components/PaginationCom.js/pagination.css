@@ -9,22 +9,27 @@
     align-items: center;
     border: none;
     outline: none;
-    background-color: #fff;
+    background-color: #F5FAFE;
     color: #000;
     cursor: pointer;
     width: 5%;
     }
-    .button-pagination:active{
-        background:olive;
+ 
+    .button-pagination-not-clicked{
+        font-weight: 400;
     }
-    
-    .button-pagination:focus{
-        background:olive;
+    .button-pagination-clicked{
+        color:#024677;
+        font-weight: 700;
     }
+    /* .button-pagination:focus{
+        color:#024677;
+        font-weight: 700;
+    } */
     
     .pagination-container{
         width: 100%;
         display: flex;
         text-align: center;
-        justify-content: center;
+        justify-content: flex-end;
     }

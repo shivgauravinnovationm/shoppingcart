@@ -17,7 +17,9 @@ function Home() {
     const [search, setSearch] = useState("");
     const [products, setProducts] = useState([])
     const [page, setPage] = useState(1)
-    const [totalPage, setTotalpage] = useState(0)
+    const [totalPage, setTotalpage] = useState(0);
+    const [itemNo, setItemNo] = useState(0)
+
 
     useEffect(() => {
 
@@ -38,6 +40,7 @@ function Home() {
     // }
 
     const handleClick = (num) => {
+        setItemNo(num)
         setPage(num)
     }
 
@@ -64,7 +67,7 @@ function Home() {
                         </div>
                     </div>
                     <div>
-                        <PaginationComp totalPage={totalPage} handleClick={handleClick} />
+                        <PaginationComp totalPage={totalPage} itemNo={itemNo} handleClick={handleClick} />
                     </div>
                 </div>
             </div>

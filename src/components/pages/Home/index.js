@@ -6,13 +6,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from "../../../store/products/getAllProducts";
 import Loading from '../../Loading/Loading';
 import PaginationComp from '../../PaginationCom.js';
-import { ITEM_PER_PAGE } from "../../../util/Constant"
+import { ITEM_PER_PAGE } from "../../../util/Constant";
+import { getAllJewellery } from "../../../store/products/getJewellery"
+
 
 function Home() {
     const dispatch = useDispatch();
 
     const isLoading = useSelector(state => state.getAllProductsReducer.isLoading);
     const allProducts = useSelector(state => state.getAllProductsReducer.allProducts);
+    const jewelleryProducts = useSelector(state => state.getAllJewelleryReducer.jewelleryProducts);
+    const jewelleryChecked = useSelector(state => state.getAllJewelleryReducer.jewelleryChecked);
 
     const [search, setSearch] = useState("");
     const [products, setProducts] = useState([])
@@ -22,19 +26,26 @@ function Home() {
     const [searchItem, setSearchItem] = useState([])
 
 
-    useEffect(() => {
 
+    console.log("products in home", products);
+
+    // console.log("jewelleryChecked", jewelleryChecked);
+    useEffect(() => {
         if (allProducts === null) {
             dispatch(getAllProducts())
         } else {
             setProducts(allProducts)
             setTotalpage(Math.round(Math.ceil(allProducts.length) / ITEM_PER_PAGE))
-
         }
 
-    }, [products, page, totalPage, allProducts])
+        if (jewelleryChecked && jewelleryProducts == null) {
+            dispatch(getAllJewellery())
+        } else if (jewelleryChecked && jewelleryProducts !== null) {
+            setProducts(jewelleryProducts)
+            setTotalpage(Math.round(Math.ceil(jewelleryProducts.length) / ITEM_PER_PAGE))
+        }
+    }, [page, totalPage, allProducts, jewelleryProducts, jewelleryChecked, products, setSearchItem])
 
-    console.log("products", products);
     const handleClick = (num) => {
         setItemNo(num)
         setPage(num)
@@ -45,15 +56,15 @@ function Home() {
         setSearch(value)
         searchFilterFunc(value)
     }
+    console.log("search", search.length);
 
     const searchFilterFunc = (value) => {
         console.log("search", search);
-        console.log("search", typeof search);
-        const travser = products.map(item => item.category)
+        console.log("search", search.length);
         const result = products.filter(item => item.category.includes(value) || item.description.includes(value) || item.title.includes(value)
         )
         setSearchItem(result)
-        console.log("searchItem", result);
+        console.log("searchItem result", searchItem.length);
         // console.log("travser", travser);
     }
 
@@ -77,7 +88,7 @@ function Home() {
 
                         <div className="preview">
 
-                            <Catelogue allProducts={searchItem.length > 0 ? searchItem : products} page={page} />
+                            <Catelogue allProducts={search.length > 0 ? searchItem : products} page={page} />
                         </div>
                     </div>
                     <div>

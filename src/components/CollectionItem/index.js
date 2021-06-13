@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import "./collection-item.css"
 function CollectionItem({ item }) {
     // console.log(item);
-
     const { category, description, id, image, price, title } = item
 
     useEffect(() => {
-    }, [])
+
+    }, [category, description, id, image, price, title])
 
     const categoryClasses = (category) => {
         if (category === "jewelery") {

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { apiUrls } from "../../config";
 import history from '../../history';
-const initialAuthState = { jewelleryProducts: null, isLoading: false, isError: "" };
+const initialAuthState = { jewelleryProducts: null, isLoading: false, isError: "", jewelleryChecked: false };
 
 const jewellerySlice = createSlice({
     name: 'jewellery',
@@ -18,15 +18,21 @@ const jewellerySlice = createSlice({
         getjewelleryFailure(state, action) {
             state.isLoading = false;
             state.isError = action.payload
-        }
+        },
+        jewelleryCheck(state, action) {
+            return { ...state, jewelleryChecked: action.payload }
+            console.log("jewellery", action);
+        },
     }
 });
 
 
 export const getAllJewellery = () => {
+
     return async (dispatch) => {
         try {
             dispatch(jewelleryActions.getjewelleryRequested());
+
             const resp = await axios.get(`${apiUrls.baseUrl}/${apiUrls.path.jewellery}`);
             if (resp && resp?.status === 200 && resp?.data?.status == "Error") {
                 let errMsg = resp?.data?.msg

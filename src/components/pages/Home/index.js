@@ -33,11 +33,6 @@ function Home() {
 
     }, [products, page, totalPage, allProducts])
 
-    // const getAllProductsFunc = () => {
-    //     if (allProducts !== null) {
-    //         setTotalpage(Math.ceil(allProducts.length) / ITEM_PER_PAGE)
-    //     }
-    // }
 
     const handleClick = (num) => {
         setItemNo(num)

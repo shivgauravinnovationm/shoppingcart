@@ -60,7 +60,7 @@ function Home() {
                     <div >
 
                         <div className="preview">
-                            <Catelogue allProducts={allProducts} page={page} />
+                            <Catelogue allProducts={products} page={page} />
                         </div>
                     </div>
                     <div>

@@ -15,11 +15,16 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false)
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
+        if (username && password) {
+            dispatch(userAuthentication({ username, password }));
+        } else {
+            setError(true)
+        }
 
-        dispatch(userAuthentication({ username, password }));
 
     }
 
@@ -39,10 +44,16 @@ function Login() {
                 <div className="mb-1">
                     <label className="login-label pb-2">Email </label>
                     <input type="text" className="form-control" value={username} onChange={e => setUsername(e.target.value)} />
+                    {
+                        error && username === "" && < span className="error">Required</span>
+                    }
                 </div>
                 <div className="mb-3">
                     <label className="login-label pb-2">Password</label>
                     <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} />
+                    {
+                        error && password === "" && < span className="error">Required</span>
+                    }
                 </div>
                 <div className="justify-content-sm-center  text-center" >
                     <button type="submit" className="Login-btn">Login</button>
@@ -52,7 +63,7 @@ function Login() {
                 </div>
 
             </form>
-        </div>
+        </div >
     )
 }
 

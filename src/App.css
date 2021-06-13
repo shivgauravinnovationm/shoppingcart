@@ -41,6 +41,11 @@ body{
     transform: rotate(360deg);
   }
 }
+.error {
+  color: red !important;
+  font-size: 14px !important;
+  padding: 5px !important;
+}
 
 @media screen and (max-width: 500px) {
   :root{

@@ -15,7 +15,9 @@ function CollectionItem({ item }) {
         } else if (category === "electronics") {
             return "item-category-electronics"
         } else if (category === "women's clothing") {
-            return 'item-category-womens-cloth px-3'
+            return 'item-category-womens-cloth '
+        } else {
+            return 'item-category-womens-cloth '
         }
     }
 
@@ -31,11 +33,11 @@ function CollectionItem({ item }) {
             </div>
             <h4 className="item-title">{category}</h4>
             <div>
-                <p className="item-description" style={{}}>
+                <p className="item-description px-1" >
                     {description}
                 </p>
             </div>
-            <div className="collection-footer mt-2">
+            <div className="collection-footer d-flex justify-content-md-between mt-2 px-1 ">
                 <span className="item-price "> Price: {price}</span>
                 <span className={`${categoryClasses(category)} px-2`}>{category}</span>
             </div>
